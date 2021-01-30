@@ -1,0 +1,136 @@
+body {
+    background-color: #F2F2F2 !important;
+  }
+  
+  .App {
+    background-color: #F2F2F2;
+  }
+  
+  .App-loader-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .App-loader-box {
+    position: relative;
+    text-align: center;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .App-logo {
+    height: 40vmin;
+    pointer-events: none;
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+      animation: App-logo-spin infinite 20s linear;
+    }
+  }
+  
+  .App-header {
+    display: flex;
+    flex-direction: column;
+    font-size: calc(22px + 2vmin);
+    color: #0A0A0A;
+    padding-left: 16px;
+  }
+  
+  .App-link {
+    color: #61dafb;
+  }
+  
+  .App-filter-card {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  .App-filter-header {
+    color: #111111;
+  }
+  
+  .App-filter-heading {
+    text-align: center !important;
+    margin-top: 1rem;
+  }
+  
+  .App-filter-heading-launch-year {
+    text-align: center !important;
+    margin-top: -1rem;
+  }
+  
+  .App-filters-hr {
+    margin: 0.4rem;
+  }
+  
+  .App-filter-button-container {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    span{
+      display: flex;
+    }
+  }
+  App-filter-button-container:active {
+    color: pink !important;
+  }
+  
+  .App-Developers-name {
+    text-align: center !important;
+  }
+  
+  .App-filter-button {
+    background-color:lightgreen;
+    border-radius: .4rem;
+    flex: 0 40%;
+    margin: 10px;
+    cursor: pointer;
+    
+  }
+  button:focus{
+    background:green;
+  }
+  
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  .Rocket-details-card {
+    width: 18rem;
+    padding: 1rem;
+    margin-bottom: 15px;
+}
+
+.Rocket-mission-image {
+    background-color: #F2F2F2;
+    width: 100%;
+}
+
+.Rocket-mission-name-flight-number {
+    color: #63659f;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.Rocket-detail-label {
+    color: #181818;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.Rocket-detail-value {
+    color: #63659f;
+    font-weight: 400;
+}
