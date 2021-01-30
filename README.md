@@ -25,3 +25,10 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+##UI and Filter Implementation
+https://github.com/Viswa-21/SpaceX/blob/master/Screenshot%20(283).png
+
+##After applying filters
+https://github.com/Viswa-21/SpaceX/blob/master/Screenshot%20(284).png
+https://github.com/Viswa-21/SpaceX/blob/master/Screenshot%20(285).png
