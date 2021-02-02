@@ -170,10 +170,6 @@
           }
         }
       }
-    }
-  },
-  "defaultProject": "spaceX",
-  "cli": {
-    "analytics": false
-  }
+    }},
+  "defaultProject": "spaceX"
 }
