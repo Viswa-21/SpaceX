@@ -1,0 +1,99 @@
+<div class="App">
+  <h1 class="App-header">SpaceX Launch Programs</h1>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+        <div class="card App-filter-card">
+          <div class="card-body">
+            <div class="card-title App-filter-header">Filters</div>
+            <div class="card-text App-filter-heading-launch-year">Launch Year
+            <hr class="App-filters-hr" />
+          </div>
+          <div class="row">
+            <div class="App-filter-button-container" *ngFor="let index of launchYears;let i=index; let even = even">
+              <span *ngIf="even">
+                <button type="button" class="App-filter-button" [value]="launchYears[i]"
+                (click)="updateFilters('launch_year',$event.target.value)">{{launchYears[i]}}</button>
+                <button type="button" class="App-filter-button" [value]="launchYears[i+1]" 
+                *ngIf="launchYears[i+1]!=undefined"
+                (click)="updateFilters('launch_year',$event.target.value)">{{launchYears[i+1]}}</button>
+              </span>
+              
+            </div>
+          </div>
+          <div class="card-text App-filter-heading">Successful Launch
+            <hr class="App-filters-hr" />
+          </div>
+          <div class="App-filter-button-container" >
+            <button type="button" class="App-filter-button" value="true"
+              (click)="updateFilters('launch_success',$event.target.value)">True</button>
+              <button type="button" class="App-filter-button" value="false"
+              (click)="updateFilters('launch_success',$event.target.value)">False</button>
+          </div>
+
+          <div class="card-text App-filter-heading">Successful Landing
+            <hr class="App-filters-hr" />
+          </div>
+          <div class="App-filter-button-container" >
+            <button type="button" class="App-filter-button" value="true"
+              (click)="updateFilters('land_success',$event.target.value)">True</button>
+              <button type="button" class="App-filter-button" value="false"
+              (click)="updateFilters('land_success',$event.target.value)">False</button>
+          </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+        <div class="row">
+            <div  class="card col-lg-3 col-md-6 col-sm-12 col-xs-12 Rocket-details-card" *ngFor="let det of details">
+              <div class="card">
+
+                <div>
+                  <img
+                    src={{det.imageSrc}}
+                    alt="Mission image"
+                    class="Rocket-mission-image"
+                  />
+                </div>
+                <div class="Rocket-mission-name-flight-number">
+                  {{det.mission_name}} #{{det.flight_number}}
+                </div>
+                <div class="Rocket-detail-label">
+                  Mission Ids:
+                  <ul *ngFor="let mId of det.mission_id">
+                    
+                    <li class="Rocket-detail-value">{{mId}}</li>
+                  </ul>
+                </div>
+                <div class="Rocket-detail-label">
+                  Launch Year:
+                  <span class="Rocket-detail-value">{{det.launch_year}}</span>
+                </div>
+                <div class="Rocket-detail-label">
+                  Successful Launch:
+                  <span class="Rocket-detail-value">
+                    {{det.launch_success ? "True" : "False"}}
+                  </span>
+                </div>
+                <div class="Rocket-detail-label">
+                  Successful Landing:
+                  <span class="Rocket-detail-value">
+                    {{det.land_success ? "True" : "False"}}
+                  </span>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h5 class="App-Developers-name">
+        Developed by : Yerigeri Viswanath 
+      </h5>
+    </div>
+  </div>
+</div>
+
+
+
+
