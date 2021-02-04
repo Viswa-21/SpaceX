@@ -12,11 +12,14 @@
           <div class="row">
             <div class="App-filter-button-container" *ngFor="let index of launchYears;let i=index; let even = even">
               <span *ngIf="even">
+                <div class="">
                 <button type="button" class="App-filter-button" [value]="launchYears[i]"
+                [ngClass]="{'btn-land-group': filters[0]['value']==launchYears[i]}"
                 (click)="updateFilters('launch_year',$event.target.value)">{{launchYears[i]}}</button>
                 <button type="button" class="App-filter-button" [value]="launchYears[i+1]" 
-                *ngIf="launchYears[i+1]!=undefined"
+                *ngIf="launchYears[i+1]!=undefined" [ngClass]="{'btn-land-group': filters[0]['value']==launchYears[i+1]}"
                 (click)="updateFilters('launch_year',$event.target.value)">{{launchYears[i+1]}}</button>
+              </div>
               </span>
               
             </div>
@@ -25,26 +28,26 @@
             <hr class="App-filters-hr" />
           </div>
           <div class="App-filter-button-container" >
-            <button type="button" class="App-filter-button" value="true"
-              (click)="updateFilters('launch_success',$event.target.value)">True</button>
-              <button type="button" class="App-filter-button" value="false"
-              (click)="updateFilters('launch_success',$event.target.value)">False</button>
+            <button type="button"  class="App-filter-button" value="true" [ngClass]="{'btn-land-group':filters[1]['value']==='true'}"
+              (click)="updateFilters('launch_success',$event.target.value);">True</button>
+              <button type="button"  class="App-filter-button" value="false" [ngClass]="{'btn-land-group':filters[1]['value']==='false'}"
+              (click)="updateFilters('launch_success',$event.target.value);">False</button>
           </div>
 
           <div class="card-text App-filter-heading">Successful Landing
             <hr class="App-filters-hr" />
           </div>
-          <div class="App-filter-button-container" >
-            <button type="button" class="App-filter-button" value="true"
-              (click)="updateFilters('land_success',$event.target.value)">True</button>
-              <button type="button" class="App-filter-button" value="false"
-              (click)="updateFilters('land_success',$event.target.value)">False</button>
+          <div class="App-filter-button-container " >
+            <button type="button"  class="App-filter-button"  value="true" [ngClass]="{'btn-land-group': filters[2]['value']==='true'}"
+              (click)="updateFilters('land_success',$event.target.value);">True</button>
+              <button type="button"  class="App-filter-button" value="false" [ngClass]="{'btn-land-group':filters[2]['value']==='false'}"
+              (click)="updateFilters('land_success',$event.target.value);">False</button>
           </div>
           </div>
         </div>
       </div>
-      <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
-        <div class="row">
+      <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12"  *ngIf="details.length !== 0">
+        <div class="row satData">
             <div  class="card col-lg-3 col-md-6 col-sm-12 col-xs-12 Rocket-details-card" *ngFor="let det of details">
               <div class="card">
 
@@ -72,19 +75,23 @@
                 <div class="Rocket-detail-label">
                   Successful Launch:
                   <span class="Rocket-detail-value">
-                    {{det.launch_success ? "True" : "False"}}
+                    {{det.launch_success}}
                   </span>
                 </div>
                 <div class="Rocket-detail-label">
                   Successful Landing:
                   <span class="Rocket-detail-value">
-                    {{det.land_success ? "True" : "False"}}
+                    {{det.land_success}}
                   </span>
                 </div>
               </div>
             </div>
         </div>
+        
       </div>
+      <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 noData" *ngIf="details.length == 0">
+        <h1>OOPS!! No Data to Display</h1>
+       </div>
     </div>
     <div>
       <h5 class="App-Developers-name">

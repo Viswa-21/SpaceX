@@ -20,15 +20,22 @@ export class AppComponent implements OnInit{
   constructor(private spacexService: SpacexService,private router:Router){}
 
   ngOnInit(){
+    this.router.navigate(['']);
     this.launchYears = Array(15).fill(2006).map((_, index) => 2006 + index);
     this.fetchData(this.filters);
   }
+
+ 
 
   updateFilters(type, value) {
     let url='limit=100';
     this.filters.forEach((element) => {
       if(element.type === type){
-        element.value = value;
+        if(element.value === value){
+          element.value = undefined;
+        }else{
+          element.value = value;
+        }
       }
       if(element.value != undefined){
         url = url + '&'+ element.type + '=' +element.value;

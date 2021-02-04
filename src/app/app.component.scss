@@ -93,7 +93,15 @@ body {
     cursor: pointer;
     
   }
-  button:focus{
+.noData{
+  align-self: center;
+  text-align: center;
+}
+
+.satData{
+  justify-content: center;
+}
+  button.btn-land-group{
     background:green;
   }
   
